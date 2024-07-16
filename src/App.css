@@ -1,0 +1,38 @@
+.container{
+  background-color: #cecece;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FF5722  ;
+  padding: 2rem 5rem;
+}
+
+.logoTitle{
+  font-size: 45px;
+  color: #FFF;
+}
+
+.headerMenu{
+  list-style: none;
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.menuItem{
+  cursor: pointer;
+  padding: 0rem 1.5rem;
+  transition: .2s all;
+}
+
+.menuItem:hover{
+  color: #cecece;
+  text-shadow: 10px 10px 50px #FFF;
+}
