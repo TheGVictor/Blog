@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { client } from '../server'
 import PostModal from './components/PostModal'
+import logo from './assets/devSpoonIcon.png'
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-      <h1 className='logoTitle'>Daily DevSpoon</h1>
+      <h1 className='logoTitle'>Daily DevSpoon<img src={logo} className='logo'/></h1>
         <ul className="headerMenu">
           <li className="menuItem">Home</li>
           <li className="menuItem">Contato</li>
@@ -49,6 +50,7 @@ function App() {
       <main className="content">
         <marquee behavior="" direction="" className="economyInfo">Dolar &copy;</marquee>
         <PostModal title={posts.title} description={posts.desc} image={posts.image} category={posts.category}/>
+        
        </main>
       
     </div>

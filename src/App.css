@@ -4,6 +4,10 @@
   height: 100vh;
 }
 
+.logo{
+  max-width: 5rem;
+}
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -13,6 +17,8 @@
 }
 
 .logoTitle{
+  display: flex;
+  align-items: center;
   font-size: 45px;
   color: #FFF;
 }
