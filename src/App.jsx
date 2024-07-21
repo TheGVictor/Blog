@@ -1,19 +1,39 @@
 import { useEffect, useState } from 'react'
-import { fetchPosts } from '../server'
+
 
 import './App.css'
+import { client } from '../server'
+import PostModal from './components/PostModal'
+
 
 function App() {
 
   const [posts, setPosts] = useState([])
 
-  useEffect(() => {
-    const getPosts = async() => {
-      const postData = await fetchPosts()
-      setPosts(postData)
+ useEffect(()=>{
+
+    const getPost = async() => {
+      try{
+      const res = await client.getEntries({ content_type: 'pageLanding'})
+      console.log(res)
+
+        setPosts({
+          title: res.includes.Entry[0].fields.title,
+          desc: res.includes.Entry[0].fields.shortDescription,
+          date: res.includes.Entry[0].fields.publishedDate,
+          content: res.includes.Entry[0].fields.content.content[0].content[0].value,
+          author: res.includes.Entry[0].fields.author.sys.id,
+          image: res.includes.Entry[0].fields.featuredImage.fields.file.url,
+          category: res.includes.Entry[0].fields.internalName
+        })
+
+    }catch(error){
+      console.error("Erro: "+error.message)
     }
-    getPosts()
-  })
+  }
+    
+    getPost()
+ },[])
 
   return (
     <div className="container">
@@ -27,16 +47,8 @@ function App() {
       </header>
 
       <main className="content">
-
-    <ul>
-      {posts.map((post) => (
-        <li key = {post.id}>
-          <h2>{post.properties.Name.title[0].text.content}</h2>
-          <p>{post.properties.Content.rich_text[0].text.content}</p>
-        </li>
-      ))}
-    </ul>
-       
+        <marquee behavior="" direction="" className="economyInfo">Dolar &copy;</marquee>
+        <PostModal title={posts.title} description={posts.desc} image={posts.image} category={posts.category}/>
        </main>
       
     </div>
