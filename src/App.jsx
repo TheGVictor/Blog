@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { client } from '../server'
 import PostModal from './components/PostModal'
-import logo from './assets/devSpoonIcon.png'
+import Header from './components/Header'
 
 
 function App() {
@@ -36,19 +36,18 @@ function App() {
     getPost()
  },[])
 
+ const handlePost = (e) => {
+  e.preventDefault()
+ }
+
   return (
+
     <div className="container">
-      <header className="header">
-      <h1 className='logoTitle'>Daily DevSpoon<img src={logo} className='logo'/></h1>
-        <ul className="headerMenu">
-          <li className="menuItem">Home</li>
-          <li className="menuItem">Contato</li>
-          <li className="menuItem">Inscreva-se!</li>
-        </ul>
-      </header>
+      <Header/>
 
       <main className="content">
         <marquee behavior="" direction="" className="economyInfo">Dolar &copy;</marquee>
+        
         <PostModal title={posts.title} description={posts.desc} image={posts.image} category={posts.category}/>
         
        </main>

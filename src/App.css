@@ -47,8 +47,18 @@
   color: #000;
 }
 
-.contentModal{
+.modalContainer{
+  
   margin: 5rem;
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+  
+}
+
+.contentModal{
   max-width: 25rem;
   box-shadow: 5px 5px 50px #7a7a7a;
   border-top-left-radius: 20px;
