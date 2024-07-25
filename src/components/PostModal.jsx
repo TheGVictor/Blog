@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const PostModal = ({title, description, image, category, clickEvent}) => {
+const PostModal = ({title, description, image, category, slug}) => {
   return (
 
     <div className="modalContainer">
       
         <div className="contentModal">
-        <Link to="/teste" className='link' >
+        <Link to={`/${slug}`} className='link' >
             <img src={image} className='postImage'/>
             <div className="postDetails">
             <p className="postCategory">{category}</p>
