@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider, Route, BrowserRouter } from 'react-router-dom'
-import Post from './Router/Post.jsx'
+import Post from './Router/Post/Post.jsx'
 import ErrorPage from './Router/ErrorPage.jsx'
-import PostModal from './components/PostModal.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -14,11 +14,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App/>,
     errorElement: <ErrorPage/>
-  },
-
-  {
-    path: "Blog",
-    element: <App/>
   },
 
   {

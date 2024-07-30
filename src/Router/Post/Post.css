@@ -1,0 +1,25 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.postContainer{
+    padding-top: 5rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.titlePost{
+    font-size: 20px;
+    
+}
+
+.imgPost{
+    
+}
+

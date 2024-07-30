@@ -5,7 +5,6 @@ import './App.css'
 
 import PostModal from './components/PostModal'
 import Header from './components/Header'
-import Post from "./Router/Post"
 import FetchPost from './FetchPost'
 
 
