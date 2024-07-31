@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 import PostModal from './components/PostModal'
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import FetchPost from './FetchPost'
 
 

@@ -8,41 +8,6 @@
   max-width: 5rem;
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FF5722  ;
-  padding: 2rem 5rem;
-}
-
-.logoTitle{
-  display: flex;
-  align-items: center;
-  font-size: 45px;
-  color: #FFF;
-}
-
-.headerMenu{
-  list-style: none;
-  display: flex;
-  font-size: 20px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #FFF;
-}
-
-.menuItem{
-  cursor: pointer;
-  padding: 0rem 1.5rem;
-  transition: .2s all;
-}
-
-.menuItem:hover{
-  color: #cecece;
-  text-shadow: 10px 10px 50px #FFF;
-}
-
 .economyInfo{
   color: #000;
 }

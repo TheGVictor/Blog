@@ -5,6 +5,7 @@ const FetchPost = async () => {
 
     try{
         const res = await client.getEntries({ content_type: 'pageLanding'})
+
         console.log(res)
   
           const post = {
@@ -16,6 +17,7 @@ const FetchPost = async () => {
             p3: res.includes.Entry[0].fields.content.content[2].content[0].value,
             author: res.includes.Entry[0].fields.author.sys.id,
             image: res.includes.Entry[0].fields.featuredImage.fields.file.url,
+            subtitle: res.includes.Entry[0].fields.featuredImage.fields.title,
             category: res.includes.Entry[0].fields.internalName,
             slug: res.includes.Entry[0].fields.slug
           }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../components/Header'
+import Header from '../../components/Header/Header'
 import FetchPost from '../../FetchPost'
+import Footer from '../../components/Footer/Footer'
 import "./Post.css"
 const Post = () => {
 
@@ -29,14 +30,18 @@ const Post = () => {
       
         <div className="titlePost"><h1>{posts.title}</h1></div>
         <h3 className='descriptionPost'>{posts.desc}</h3>
+
         <img src={posts.image} alt="" className='imgPost'/>
+        <p className='imageSubtitle'>{posts.subtitle}</p>
+
         <p className="contentPost">{posts.p1}</p>
         <hr />
         <p className="contentPost">{posts.p2}</p>
         <hr />
         <p className="contentPost">{posts.p3}</p>
+        </div>        
         </div>
-        </div>
+        <Footer/>
     </div>
   )
 }
