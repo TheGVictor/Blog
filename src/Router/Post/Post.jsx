@@ -3,31 +3,38 @@ import Header from '../../components/Header/Header'
 import FetchPost from '../../FetchPost'
 import Footer from '../../components/Footer/Footer'
 import "./Post.css"
-const Post = () => {
+import { useParams } from 'react-router-dom'
+
+const Post = ({info}) => {
 
   const [posts, setPosts] = useState({})
+  const {slug} = useParams()
 
   useEffect(() => {
+    const getPostData = async () => {
+      const fetchedPosts = await FetchPost();
+      const foundPost = fetchedPosts.base.find(posts => posts.
+      fields.slug === slug);
+      setPosts({
+        title: foundPost.fields.title,
+        desc: foundPost.fields.shortDescription,
+        image: foundPost.fields.featuredImage.fields.file.url,
+        subtitle: foundPost.fields.subtitle,
+        p1: foundPost.fields.content.content[0].content[0].value,
+        p2: foundPost.fields.content.content[1].content[0].value,
+        p3: foundPost.fields.content.content[2].content[0].value,
+      });
+    };
+    getPostData();
+  }, []);
 
-    const getInfo = async() => {
-      try{
-        const post = await FetchPost()
-        setPosts(post)
-      }catch(error){
-        console.error(error)
-      }
-    
-    }
-    
-    getInfo()
-    },[])
 
   return (
     <div>
       <Header/>
       <div className="mainContainer">
       <div className="postContainer">
-      
+        
         <div className="titlePost"><h1>{posts.title}</h1></div>
         <h3 className='descriptionPost'>{posts.desc}</h3>
 

@@ -8,16 +8,19 @@ import ErrorPage from './Router/ErrorPage.jsx'
 
 
 
+
+
 const router = createBrowserRouter([
 
   {
     path: "/",
     element: <App/>,
-    errorElement: <ErrorPage/>
+    errorElement: <ErrorPage/>,
+  
   },
 
   {
-    path: "post",
+    path: "post/:slug",
     element: <Post/>
   }
 

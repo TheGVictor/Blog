@@ -12,56 +12,10 @@
   color: #000;
 }
 
-.modalContainer{
-  
-  margin: 5rem;
+.singlePosts{
+  list-style: none;
+  display: flex;
 }
 
-.link{
-  text-decoration: none;
-  color: inherit;
-  
-}
-
-.contentModal{
-  max-width: 25rem;
-  box-shadow: 5px 5px 50px #7a7a7a;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.contentModal:hover{
-  opacity: 0.9;
-  background-color: #bebebe;
-  cursor: pointer;
-  transition: 0.1s linear;
-}
-
-  .postDetails{
-    padding: 0rem 1rem;
-    padding-bottom: 1rem;
-  }
-
-.postCategory{
-  text-transform: uppercase;
-  color: #FF5722;
-  padding-top: 1rem;
-  font-weight: 500;
-}
-
-.postImage{
-  width: 100%;
-}
-
-.postTitle{
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.postDescription{
-  font-size: 15px;
-  font-weight: 400;
-  padding-top: 0.3rem;
-}
 
 

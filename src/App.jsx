@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 
 import './App.css'
 
-import PostModal from './components/PostModal'
+import PostModal from './components/Modal/PostModal'
 import Header from './components/Header/Header'
 import FetchPost from './FetchPost'
+import Post from './Router/Post/Post'
 
 
 
@@ -14,7 +15,7 @@ function App() {
   const [posts, setPosts] = useState({})
   const [coin, setCoin] = useState({})
   const [loading, setLoading] = useState(true)
-  const [timestamp, setTimestamp] = useState('');
+  const [hide, setHide] = useState(true);
 
 
  useEffect(()=>{
@@ -45,9 +46,13 @@ getPost()
             wee
         </marquee>
         
-        <PostModal title={posts.title} description={posts.desc} image={posts.image} category={posts.category}/>
-        
-        
+<ul className='singlePosts'>
+        {posts.base?.map((post, i) => (
+          <li key={post.fields.internalName}>
+               <PostModal info={post}/>               
+          </li>
+        ))}
+        </ul>
 
        </main>
       
