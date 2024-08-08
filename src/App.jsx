@@ -6,16 +6,15 @@ import './App.css'
 import PostModal from './components/Modal/PostModal'
 import Header from './components/Header/Header'
 import FetchPost from './FetchPost'
-import Post from './Router/Post/Post'
+import { getQuota } from '../server'
 
 
 
 function App() {
 
   const [posts, setPosts] = useState({})
-  const [coin, setCoin] = useState({})
+  const [coin, setCoin] = useState([])
   const [loading, setLoading] = useState(true)
-  const [hide, setHide] = useState(true);
 
 
  useEffect(()=>{
@@ -27,7 +26,18 @@ const getPost = async() =>{
     console.error(error)
   }
 }
-getPost()
+const getCoin = async() => {
+  try{
+    const data = await getQuota()
+    const filteredCoins = Object.entries(data.path).filter(([currency]) => currency !== 'source') // Remove 'source'
+    setCoin(filteredCoins)
+    console.log(coin)
+  }catch(error){
+    console.error(error)
+  }
+}
+getPost(),
+getCoin()
  }, [])
 
 
@@ -43,13 +53,22 @@ getPost()
 
       <main className="content">
         <marquee behavior="" direction="" className="economyInfo">           
-            wee
+
+        {coin.map(([currency, info], i) => (
+            <span key={i}>
+              {currency}: R${info.buy}
+              
+              &nbsp;|&nbsp;
+            </span>
+          ))}
+
         </marquee>
-        
+
+
 <ul className='singlePosts'>
         {posts.base?.map((post, i) => (
           <li key={post.fields.internalName}>
-               <PostModal info={post}/>               
+               <PostModal info={post}/>         
           </li>
         ))}
         </ul>

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer'
 import "./Post.css"
 import { useParams } from 'react-router-dom'
 
-const Post = ({info}) => {
+const Post = () => {
 
   const [posts, setPosts] = useState({})
   const {slug} = useParams()
@@ -13,13 +13,14 @@ const Post = ({info}) => {
   useEffect(() => {
     const getPostData = async () => {
       const fetchedPosts = await FetchPost();
+      console.log(fetchedPosts)
       const foundPost = fetchedPosts.base.find(posts => posts.
       fields.slug === slug);
       setPosts({
         title: foundPost.fields.title,
         desc: foundPost.fields.shortDescription,
         image: foundPost.fields.featuredImage.fields.file.url,
-        subtitle: foundPost.fields.subtitle,
+        subtitle: foundPost.fields.featuredImage.fields.description,
         p1: foundPost.fields.content.content[0].content[0].value,
         p2: foundPost.fields.content.content[1].content[0].value,
         p3: foundPost.fields.content.content[2].content[0].value,

@@ -5,6 +5,7 @@ const FetchPost = async () => {
 
     try{
         const res = await client.getEntries({ content_type: 'pageLanding'})
+  
           const post = {
             base: res.includes.Entry,
           }

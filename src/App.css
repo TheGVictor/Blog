@@ -10,11 +10,17 @@
 
 .economyInfo{
   color: #000;
+ height: 1rem;
 }
 
 .singlePosts{
   list-style: none;
   display: flex;
+}
+
+.coinBody{
+  display: flex;
+
 }
 
 
