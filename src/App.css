@@ -9,8 +9,12 @@
 }
 
 .economyInfo{
-  color: #000;
- height: 1rem;
+  color: #FFF;
+  background-color: #000;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+
 }
 
 .singlePosts{
@@ -18,8 +22,8 @@
   display: flex;
 }
 
-.coinBody{
-  display: flex;
+.coinItem{
+  padding: 2rem;
 
 }
 

@@ -29,9 +29,9 @@ const getPost = async() =>{
 const getCoin = async() => {
   try{
     const data = await getQuota()
-    const filteredCoins = Object.entries(data.path).filter(([currency]) => currency !== 'source') // Remove 'source'
+    const filteredCoins = Object.entries(data.path).filter(([currency]) => currency !== 'source')
     setCoin(filteredCoins)
-    console.log(coin)
+    console.log(filteredCoins)
   }catch(error){
     console.error(error)
   }
@@ -52,13 +52,11 @@ getCoin()
       <Header/>
 
       <main className="content">
-        <marquee behavior="" direction="" className="economyInfo">           
+        <marquee behavior="" className="economyInfo" scrollamount = "5">           
 
         {coin.map(([currency, info], i) => (
-            <span key={i}>
-              {currency}: R${info.buy}
-              
-              &nbsp;|&nbsp;
+            <span key={i} className='coinItem'>
+              {currency}: R${info.buy} &nbsp; {info.variation > 0 ? <span style={{color: '#00FF00'}}>+{info.variation}</span> : <span style={{color: "#FF0000"}}>{info.variation}</span>}
             </span>
           ))}
 
