@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer'
 import "./Post.css"
 import { useParams } from 'react-router-dom'
 import { fetchAuthorDetails } from '../../../server'
+import Loading from '../../components/Loading/Loading'
 
 const Post = () => {
 
@@ -36,7 +37,8 @@ const Post = () => {
       try {
         const authorDetails = await fetchAuthorDetails(authorID)
         setAuthor({
-          name: authorDetails.name
+          name: authorDetails.name,
+          avatar: authorDetails.avatar.fields.file.url
         })
         console.log(authorDetails)
         // Aqui você pode definir o estado para exibir os detalhes do autor
@@ -60,10 +62,12 @@ const Post = () => {
 
 
   return (
+    
     <div>
+       
       <Header/>
-
-    {loading ? (<p>Carregando...</p>) : (
+  {loading ? (<Loading/>) : (
+   
 
       <div className="mainContainer">
       <div className="postContainer">
@@ -71,21 +75,24 @@ const Post = () => {
         <div className="titlePost"><h1>{posts.title}</h1></div>
         <h3 className='descriptionPost'>{posts.desc}</h3>
         
-        <p className='updatedAt'>Por <span>{author.name}</span>{posts.updateAt}</p>
+        <div className='updateInfo'>
+          <img src={author.avatar} className='authorImg'/>
+          <p>Por <span>{author.name}</span>. {posts.updateAt}</p>
+          </div>
         <img src={posts.image} alt="" className='imgPost'/>
         <p className='imageSubtitle'>{posts.subtitle}</p>
 
         
-
-        <p className="contentPost">{posts.p1}</p>
-        <hr />
-        <p className="contentPost">{posts.p2}</p>
-        <hr />
+        <section className="articleContent">
+        <p className="contentPost">{posts.p1}</p>        
+        <p className="contentPost">{posts.p2}</p>        
         <p className="contentPost">{posts.p3}</p>
+        </section>
         </div>        
         </div>
     )}
         <Footer/>
+      
     </div>
 
   )

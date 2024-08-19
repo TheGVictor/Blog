@@ -27,5 +27,16 @@
 
 }
 
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.generalPosts{
+  width: 90%;
+  display: flex;
+}
 
 

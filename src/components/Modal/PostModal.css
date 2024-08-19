@@ -1,5 +1,6 @@
 .modalContainer{
-    margin: 5rem;
+    padding: 3rem;
+    
   }
   
   .link{
@@ -7,13 +8,21 @@
     color: inherit;
     
   }
+
+
+  .singlePosts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   
   .contentModal{
-    max-width: 25rem;
-    max-height: 30rem;
+    width: 25rem;
+    height: 30rem;
     box-shadow: 5px 5px 50px #7a7a7a;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    overflow: hidden;
   }
   
   .contentModal:hover{
