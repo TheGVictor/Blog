@@ -63,3 +63,32 @@
     padding-top: 0.3rem;
   }
 
+  @media (max-width: 1025px) and (min-width: 767px) {
+    .contentModal{
+      width: 20rem;
+      height: 30rem;
+    }
+  }
+
+  @media (max-width: 769px) and (min-width: 425px) {
+
+    .contentModal{
+      width: 15rem;
+      height: 20rem;
+    }
+
+    .postTitle{
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .postCategory{
+      padding-top: 0.5rem;
+    }
+
+    .postDescription{
+      font-size: 10px;
+
+    }
+
+}

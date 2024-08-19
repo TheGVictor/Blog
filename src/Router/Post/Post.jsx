@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header'
 import FetchPost from '../../FetchPost'
 import Footer from '../../components/Footer/Footer'
 import "./Post.css"
+import "../../index.css"
 import { useParams } from 'react-router-dom'
 import { fetchAuthorDetails } from '../../../server'
 import Loading from '../../components/Loading/Loading'
@@ -76,7 +77,7 @@ const Post = () => {
         <h3 className='descriptionPost'>{posts.desc}</h3>
         
         <div className='updateInfo'>
-          <img src={author.avatar} className='authorImg'/>
+          <div className='authorImg' style={{backgroundImage: `url(${author.avatar})`}}></div>
           <p>Por <span>{author.name}</span>. {posts.updateAt}</p>
           </div>
         <img src={posts.image} alt="" className='imgPost'/>

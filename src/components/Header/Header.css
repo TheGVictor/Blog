@@ -32,3 +32,31 @@
     color: #cecece;
     text-shadow: 10px 10px 50px #FFF;
   }
+
+  @media (max-width: 1042px) and (min-width: 767px) {
+      .logoTitle{
+        font-size: 25px;
+      }
+
+      .headerMenu{
+        font-size: 15px;
+      }
+
+      .logo{
+        width: 50px;
+      }
+  }
+
+  @media (max-width: 769px) and (min-width: 425px) {
+    .logoTitle{
+      font-size: 20px;
+    }
+
+    .headerMenu{
+      font-size: 12px;
+    }
+
+    .logo{
+      width: 40px;
+    }
+}

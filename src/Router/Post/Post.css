@@ -43,9 +43,12 @@
 }
 
 .authorImg{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 10px;
+    border-radius: 50px;
+    border: 2px solid #FF5722;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: no-repeat center;
+    background-size: cover; 
 }
 
 .contentPost{
@@ -55,4 +58,13 @@
     font-weight: 300;
     color: #000;
 }
+
+@media (max-width: 1350px) and (min-width: 767px) {
+
+    .postContainer{
+      padding-top: 3rem;
+      width: 60%;
+  
+  }
+  }
 
