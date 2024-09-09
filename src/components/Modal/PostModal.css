@@ -19,7 +19,7 @@
   .contentModal{
     width: 25rem;
     height: 30rem;
-    box-shadow: 5px 5px 50px #7a7a7a;
+    box-shadow: 5px 5px 30px #7a7a7a;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     overflow: hidden;
@@ -91,4 +91,31 @@
 
     }
 
+}
+
+@media (max-width: 549px)  {
+
+  .contentModal{
+    width: 60vw;
+    height: 15rem;
+  }
+
+  .modalContainer{
+    padding: 1rem;
+  }
+
+  .postCategory{
+    padding-top: 0.3rem;
+    font-size: 12px;
+  }
+
+  .postTitle{
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  .postDescription{
+   display: none;
+  }
+  
 }

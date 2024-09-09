@@ -14,8 +14,7 @@
 }
 
 .titlePost{
-    font-size: 20px;
-    
+    font-size: 20px;    
 }
 
 .updateInfo{
@@ -64,7 +63,35 @@
     .postContainer{
       padding-top: 3rem;
       width: 60%;
+  }
+
   
   }
+
+  @media (max-width: 549px)  {
+
+    .postContainer{
+        padding-top: 3rem;
+        width: 70vw;        
+    }
+    
+    .titlePost{
+        font-size: 15px;    
+    }
+
+    .descriptionPost{
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .authorImg{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .updateInfo{
+        font-size: 13px;
+    }
+  
   }
 
