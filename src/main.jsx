@@ -13,7 +13,7 @@ import ErrorPage from './Router/ErrorPage.jsx'
 const router = createBrowserRouter([
 
   {
-    path: "/",
+    path: "/Blog",
     element: <App/>,
     errorElement: <ErrorPage/>,
   
